@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "aula01",
+			"path": "aula01"
+		},
+		{
+			"name": "aula02",
+			"path": "aula02"
+		},
+		{
+			"name": "CursoSpringBoot",
+			"path": "."
+		}
+	]
+}
