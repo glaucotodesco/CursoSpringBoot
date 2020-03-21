@@ -1,3 +1,3 @@
 # Curso SpringBoot
 
-SpringBoot, SpringMVC e Thymeleaf
+Com: Spring MVC, DevTools e Thymeleaf
