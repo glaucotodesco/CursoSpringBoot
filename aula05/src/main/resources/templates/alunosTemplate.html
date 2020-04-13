@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos</title>
+</head>
+
+<body>
+    
+    <form th:action="@{/salvar}" method="POST">
+        <input type="text" name="nome"/>
+        <input type="text" name="curso"/>
+        <input type="submit" value="Salvar"/>
+    </form>
+    <table>
+        <tr th:each="aluno : ${alunos}">
+            <td th:text="${aluno.matricula}"></td>
+            <td th:text="${aluno.nome}"></td>
+            <td th:text="${aluno.curso}"></td>
+        </tr>
+    </table>
+</body>
+
+</html>
