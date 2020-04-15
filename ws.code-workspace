@@ -17,6 +17,12 @@
 		},
 		{
 			"path": "aula05"
+		},
+		{
+			"path": "aula06"
 		}
-	]
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
 }

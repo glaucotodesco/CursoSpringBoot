@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes Curso</title>
+</head>
+<body>
+    <a href="/">Menu</a>
+
+    <h1 th:text="'Detalhes do Curso: ' + ${curso.id}"></h1>
+    <br> Nome: <span th:text = "${curso.nome}"></span>
+    <br> Carga Horária: <span th:text = "${curso.cargaHoraria}"></span>
+
+</body>
+</html>
