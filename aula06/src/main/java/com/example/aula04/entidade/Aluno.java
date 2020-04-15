@@ -7,9 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
-
-import org.hibernate.annotations.ManyToAny;
 
 /**
  * Aluno
@@ -29,7 +26,7 @@ public class Aluno implements Serializable {
     private String nome;
 
     @ManyToOne
-    @JoinColumn(name="ID_CURSO")      
+    
     private Curso curso;
 
     public int getMatricula() {
