@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <h1>Cadastro de Cursos</h1>
     <a href="/">Menu</a>
     <br>
     <br>
@@ -29,13 +30,11 @@
             <th>Id</td>
             <th>Nome</td>
             <th>Carga Horaria</td>
-            <th>Info</td>
         </tr>
         <tr th:each="curso : ${cursos}">
             <td th:text="${curso.id}"></td>
             <td th:text="${curso.nome}"></td>
             <td th:text="${curso.cargaHoraria}"></td>
-            <td> <a th:href="@{'/detalhesCurso/'+${curso.id}}"> Info</a></td>
          </tr>
     </table>
 </body>

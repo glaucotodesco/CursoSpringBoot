@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -17,8 +16,8 @@ public class CursoControle {
     private CursoService servico;
 
     @GetMapping("/cursos")
-    public ModelAndView getAlunos() {
-        ModelAndView mv = new ModelAndView("cursoTemplate");
+    public ModelAndView getCursos() {
+        ModelAndView mv = new ModelAndView("cursosTemplate");
         mv.addObject("cursos", servico.getCursos());
 
         return mv;
@@ -31,13 +30,5 @@ public class CursoControle {
         return "redirect:/cursos";
     }
 
-    @GetMapping("/detalhesCurso/{idCurso}")
-    public ModelAndView getDetalhesCurso(@PathVariable int idCurso) {
-        Curso curso = servico.getCursoById(idCurso);
-
-        ModelAndView mv = new ModelAndView("detalhesCursoTemplate");
-        mv.addObject("curso", curso);
-
-        return mv;
-    }
+   
 }

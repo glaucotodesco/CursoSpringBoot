@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -23,8 +24,9 @@ public class Curso implements Serializable {
     private String nome;
     private int cargaHoraria;
 
-    @OneToMany(mappedBy = "curso")
-    private List<Aluno> alunos;
+    @OneToMany  
+    @JoinColumn(name="ID_CURSO")      
+    public List<Aluno> alunos;
 
     public int getId() {
         return id;
@@ -58,7 +60,6 @@ public class Curso implements Serializable {
         this.alunos = alunos;
     }
 
-    
     @Override
     public String toString() {
         return "Curso [cargaHoraria=" + cargaHoraria + ", id=" + id + ", nome=" + nome + "]";

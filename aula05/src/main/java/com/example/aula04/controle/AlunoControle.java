@@ -1,7 +1,5 @@
 package com.example.aula04.controle;
 
-import java.util.List;
-
 import com.example.aula04.entidade.Aluno;
 import com.example.aula04.servico.AlunoServico;
 
