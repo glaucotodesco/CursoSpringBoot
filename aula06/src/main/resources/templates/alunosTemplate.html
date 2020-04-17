@@ -5,18 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alunos</title>
-
+    
     <style>
         table, th, td {
           border: 1px solid black;
         }
     </style>
 
-
 </head>
 
 <body>
-    <h1>Cadastrado de Alunos</h1>
+    <h1>Cadastro de Alunos</h1>    
     <a href="/">Menu</a>
     <br>
     <br>
@@ -28,10 +27,11 @@
     <br>
     <table>
         <tr>
-            <th>Matricula</th>
-            <th>Nome</th>
-            <th>Curso</th>
+            <th>Matricula</td>
+            <th>Nome</td>
+            <th>Curso</td>
         </tr>
+       
         <tr th:each="aluno : ${alunos}">
             <td th:text="${aluno.matricula}"></td>
             <td th:text="${aluno.nome}"></td>

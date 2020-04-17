@@ -6,7 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
 
 /**
  * Aluno
@@ -22,11 +24,10 @@ public class Aluno implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int matricula;
-    
     private String nome;
 
     @ManyToOne
-    
+    @JoinColumn(name="ID_CURSO")
     private Curso curso;
 
     public int getMatricula() {

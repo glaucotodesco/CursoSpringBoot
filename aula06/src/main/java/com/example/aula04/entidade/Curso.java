@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
+
 @Entity
 public class Curso implements Serializable {
 
@@ -24,9 +25,9 @@ public class Curso implements Serializable {
     private String nome;
     private int cargaHoraria;
 
-    @OneToMany  
-    @JoinColumn(name="ID_CURSO")      
-    public List<Aluno> alunos;
+    @OneToMany
+    @JoinColumn(name="ID_CURSO")
+    private List <Aluno> alunos;
 
     public int getId() {
         return id;
@@ -52,6 +53,7 @@ public class Curso implements Serializable {
         this.cargaHoraria = cargaHoraria;
     }
 
+    
     public List<Aluno> getAlunos() {
         return alunos;
     }
@@ -64,5 +66,4 @@ public class Curso implements Serializable {
     public String toString() {
         return "Curso [cargaHoraria=" + cargaHoraria + ", id=" + id + ", nome=" + nome + "]";
     }
-
 }
