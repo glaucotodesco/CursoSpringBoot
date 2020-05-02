@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alunos</title>
+    
+    <style>
+        table, th, td {
+          border: 1px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Cadastro de Alunos</h1>    
+    <a href="/">Menu</a>
+    <br>
+    <br>
+    <form th:action="@{/salvarAluno}" th:object="${aluno}" method="POST">
+        <label>Nome:</label><input type="text" placeholder="Digite o nome" name="nome" required/>
+        
+        <label>Curso:</label>
+
+        <select th:field="${aluno.curso}" required>
+            <option value="">Escolha o curso</option>
+            <option th:each="curso : ${cursos}" th:value="${curso.id}" th:text="${curso.nome}"></option>
+        </select>
+
+
+        <input type="submit" value="Salvar" />
+    </form>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>Matricula</th>
+            <th>Nome</th>
+            <th>Curso</th>
+        </tr>
+       
+        <tr th:each="aluno : ${alunos}">
+            <td th:text="${aluno.matricula}"></td>
+            <td th:text="${aluno.nome}"></td>
+            <td th:text="${aluno.curso?.nome}"></td>
+        </tr>
+    </table>
+</body>
+
+</html>

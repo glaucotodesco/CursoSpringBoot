@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes Curso</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detalhes Curso</h1>
+    <a href="/">Menu</a>
+    <a href="/cursos">Cursos</a>
+    <br>
+    <br>
+    <b>Id Curso: </b> <span th:text="${curso.id}"></span>
+    <br><b>Nome: </b> <span th:text="${curso.nome}"></span>
+    <br><b>Carga Horária: </b> <span th:text="${curso.cargaHoraria}"></span>
+    <br>
+    <br>
+    Alunos:
+    <table>
+        <tr>
+            <th>Matricula</th>
+            <th>Nome</th>
+            <th>Curso</th>
+        </tr>
+       
+        <tr th:each="aluno : ${curso.alunos}">
+            <td th:text="${aluno.matricula}"></td>
+            <td th:text="${aluno.nome}"></td>
+            <td th:text="${aluno.curso?.nome}"></td>
+        </tr>
+    </table>
+</body>
+</html>
