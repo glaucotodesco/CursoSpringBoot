@@ -1,7 +1,7 @@
 package com.example.aula04.controle;
 
 import com.example.aula04.entidade.Curso;
-import com.example.aula04.servico.CursoService;
+import com.example.aula04.servico.CursoServico;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class CursoControle {
 
     @Autowired
-    private CursoService servico;
+    private CursoServico servico;
 
     @GetMapping("/cursos")
     public ModelAndView getCursos() {

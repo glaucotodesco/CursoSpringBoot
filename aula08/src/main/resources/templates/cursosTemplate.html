@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cadastro de Cursos</h1>
+    <a href="/">Menu</a>
+    <br>
+    <br>
+    <form th:action="@{/salvarCurso}" method="POST">
+        <label>Nome:</label><input type="text" name="nome" required/>
+        <label>Carga Horária:</label><input type="number" name="cargaHoraria" min="1" required />
+        <input type="submit" value="Salvar" />
+    </form>
+    <br>
+    
+    <table>
+        <tr>
+            <th>Id Curso</th>
+            <th>Nome</th>
+            <th>Carga Horária</th>
+            <th>Detalhes</th>
+        </tr>
+        <tr th:each="curso : ${cursos}">
+            <td th:text="${curso.id}"></td>
+            <td th:text="${curso.nome}"></td>
+            <td th:text="${curso.cargaHoraria}"></td>
+            <td> <a th:href="@{'/detalhesCurso/' + ${curso.id}}">Detalhes</a></td>
+        </tr>
+    </table>
+    
+</body>
+
+</html>
