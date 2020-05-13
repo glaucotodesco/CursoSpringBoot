@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes Professor</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Detalhes Professor</h1>
+    <a href="/">Menu</a>
+    <a href="/professores">Professores</a>
+    <br>
+    <br>
+    <b>Código: </b> <span th:text="${professor.codigo}"></span>
+    <br><b>Nome: </b> <span th:text="${professor.nome}"></span>
+    
+   
+
+    <br>
+    <br>
+    Cursos Associados:
+    <table>
+        <tr>
+            <th>Id Curso</th>
+            <th>Curso</th>
+            <th>Carga Horária</th>
+        </tr>
+       
+        <tr th:each="curso : ${professor.cursos}">
+            <td th:text="${curso.id}"></td>
+            <td th:text="${curso.nome}"></td>
+            <td th:text="${curso.cargaHoraria}"></td>
+        </tr>
+    </table>
+    <br>
+    <br>
+
+    <form th:action="@{/associarCursoProfessor(codigoProfessor=${professor.codigo})}" method="POST">
+        <label><b>Cursos:</b></label>
+        <select name="id" required>
+            <option value="">Escolha o curso</option>
+            <option th:each="curso : ${cursos}"
+                        th:value="${curso.id}"
+                        th:text="${curso.nome}">
+            </option>
+        </select>
+        <input type="submit" value="Associar Curso" />
+    </form>
+</body>
+</html>
